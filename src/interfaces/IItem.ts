@@ -1,3 +1,4 @@
+import {  ObjectId } from "mongodb"
 import { Document } from "mongoose"
 
 export default interface IItem extends Partial<Document>  {
@@ -7,6 +8,8 @@ export default interface IItem extends Partial<Document>  {
     amount: number
     cost?: number
 }
-
-// _id
-// save
+export interface IItemOrder  extends Partial<Document>  {
+    item: IItem | ObjectId
+    price: number
+    qty: number
+}

@@ -11,4 +11,7 @@ app.use(express.json())
 import ItemRouter from './routes/ItemRouter'
 app.use('/item',ItemRouter)
 
+import UserRouter from './routes/userRouter'
+app.use('/user',UserRouter)
+
 app.listen(3355,()=>console.log("### Server Is UP #####"));
