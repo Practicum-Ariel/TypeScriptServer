@@ -1,5 +1,8 @@
 import cors from 'cors';
 import express from 'express';
+import 'dotenv/config';
+import {connect} from './config/db'
+connect()
 
 const app = express()
 app.use(cors())
