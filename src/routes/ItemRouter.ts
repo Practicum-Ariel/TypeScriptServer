@@ -38,23 +38,24 @@ router.put('/:barcode', async (req:Request, res:Response) => {
     }
 })
 
-// router.post('/', async (req: Request, res: Response) => {
-//     try {
-//         let itemBody: IItem = {
-//             barcode: req.body?.barcode || 999,
-//             name: req.body?.name || "",
-//             price: req.body?.price || -1,
-//             amount: req.body?.amount || 0
-//         }
-//         console.log("body from router", itemBody);
-//         let item = await ItemService.addNewItem(itemBody)
-//         res.send(item)
-//     }
-//     catch (err) {
-//         console.log(err);
-//         res.status(480).send(err)
+router.post('/', async (req: Request, res: Response) => {
+    try {
+        let itemBody: IItem = {
+            barcode: req.body?.barcode || 999,
+            name: req.body?.name || "",
+            price: req.body?.price || -1,
+            amount: req.body?.amount || 0,
 
-//     }
-// })
+        }
+        console.log("body from router", itemBody);
+        let item = await ItemService.addNewItem(itemBody)
+        res.send(item)
+    }
+    catch (err) {
+        console.log(err);
+        res.status(480).send(err)
+
+    }
+})
 
 export default router
